@@ -10,6 +10,8 @@ import edu.eci.apau.notasprototype.services.MateriaServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +44,15 @@ public class NotasAPIController {
             return new ResponseEntity<>(materiaServices.getCurrentMaterias(), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getLocalizedMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+    
+    @RequestMapping(path = "/estimate", method = RequestMethod.POST)
+    public ResponseEntity<?> makeEstimateAsignature(@RequestBody Materia materia){
+        try {
+            return new ResponseEntity<>(materiaServices.getEstimate(materia), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getLocalizedMessage(), HttpStatus.FORBIDDEN);
         }
     }
 }

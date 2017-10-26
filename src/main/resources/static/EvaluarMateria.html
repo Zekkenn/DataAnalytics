@@ -12,6 +12,8 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+          href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />    
         <link rel="stylesheet" href="stylesheets/mycss.css"/>
         <script src="/webjars/jquery/jquery.min.js"></script>
         <script src="/webjars/sockjs-client/sockjs.min.js"></script>
@@ -46,12 +48,47 @@ and open the template in the editor.
                 <h1>Evaluar Materia</h1>
                 
                 <form action="">
-                    <input list="materias" name="materia">
+                    <font>MATERIA: </font>
+                    <input list="materias" id="materia" name="materia">
                     <datalist id="materias">
                     </datalist>
-                        <input type="submit">
                 </form>
             </h:form>
+            <div class ="container">
+                <div class="row">
+                    <div class="col-sm-4" style="text-align: center">
+                        <br>
+                        <form>
+                            <font>Nota Tercio 1: </font>
+                            <input type="text" id="tercio1" name="tercio1" value="" onchange="" />
+                        </form>
+                        <br>
+                        <form>
+                            <font>Nota Tercio 2: </font>
+                            <input type="text" id="tercio2" name="tercio2" value="" onchange="" />
+                        </form>
+                        <br>
+                            <button class="btn-circle" onclick="evaluarMateria.makeEstimate()">Get Results</button>
+                    </div>
+                    <div class="col-sm-8" style="text-align: center">
+                        <br>
+                        <br>
+                        <form>
+                            <font id="tercio3" style="font-size: 18px; color: #212444;"> Tercio 3 Estimado: </font>
+                        </form>
+                        <br>
+                        <form>
+                            <font id="rSquared" style="font-size: 18px; color: #212444;"> Multiple R-squared : </font>
+                        </form>
+                        <br>
+                        <form>
+                            <font style="font-size: 18px; color: #212444;"> Decision : </font>
+                            <font id="decision" style="font-size: 18px; color: #212444;"></font>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
         </div>
     </body>
 </html>

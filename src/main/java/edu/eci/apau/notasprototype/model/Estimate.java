@@ -30,7 +30,7 @@ public class Estimate {
     
     public void makeEstimate(double nota1, double nota2){
         this.nota3 = (nota1*nota1coef)+(nota2*nota2coef)+intercept;
-        this.decision = (((nota3+nota2+nota1)/3D) < 3.0) ? "Cancele" : "NoCancele";
+        this.decision = (((nota3+nota2+nota1)/3D) < 30) ? "Cancele" : "NoCancele";
     }
 
     public double getrSquared() {

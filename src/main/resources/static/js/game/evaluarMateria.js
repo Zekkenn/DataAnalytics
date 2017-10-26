@@ -42,6 +42,27 @@ var evaluarMateria = (function () {
                     updateResults(result);
                 }
             });
+        },
+        addPlot : function (){
+            var src = '';
+            if ($("#materia").val() === "PIMB") {
+                src = "plotPimb3dTercios.html";
+            } else if ($("#materia").val() === "MBDA"){
+                src = "finalVspromMbda.html";
+            }
+            $('#plot1').html(
+                    '<iframe id="Plot1"'
+                    +        'style="text-align: center;"'
+                    +    'name="Pimb"'
+                    +    'title="Plot"'
+                    +    'width="800"'
+                    +    'height="500"'
+                    +    'frameborder="5"'
+                    +    'scrolling="no"'
+                    +    'src="html/plotPimb3dTercios.html">'
+                    +'</iframe>'
+                    );
+
         }
 
     };

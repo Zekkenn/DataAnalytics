@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author Esteban
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"edu.eci.apau.notasprototipe"})
+@ComponentScan(basePackages = {"edu.eci.apau.notasprototype"})
 public class NotasPrototypeAPI {
 
     public static void main(String[] args) {

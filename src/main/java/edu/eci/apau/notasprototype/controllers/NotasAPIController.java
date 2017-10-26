@@ -6,6 +6,8 @@
 package edu.eci.apau.notasprototype.controllers;
 
 import edu.eci.apau.notasprototype.model.Materia;
+import edu.eci.apau.notasprototype.services.MateriaServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,18 +22,28 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Esteban
  */
 
-@Controller
 @RestController
-@Service
+@RequestMapping("/evaluate")
 public class NotasAPIController {
     
-    @RequestMapping(value = "/index" ,method = RequestMethod.GET)
-    /*public ModelAndView getHome(ModelAndView modelAndView, Materia materia){
-        modelAndView.addObject("materia", materia);
-        modelAndView.setViewName("index");
-        return modelAndView;
-    }*/
-    public ResponseEntity<?> getHome(){
-        return new ResponseEntity<>("Home", HttpStatus.ACCEPTED);
+    @Autowired
+    MateriaServices materiaServices;
+//    @RequestMapping(value = "/index" ,method = RequestMethod.GET)
+//    /*public ModelAndView getHome(ModelAndView modelAndView, Materia materia){
+//        modelAndView.addObject("materia", materia);
+//        modelAndView.setViewName("index");
+//        return modelAndView;
+//    }*/
+//    public ResponseEntity<?> getHome(){
+//        return new ResponseEntity<>("Home", HttpStatus.ACCEPTED);
+//    }
+    
+    @RequestMapping(path = "/currentAsignatures", method = RequestMethod.GET)
+    public ResponseEntity<?> getCurrentAsignatures(){
+        try {
+            return new ResponseEntity<>(materiaServices.getCurrentMaterias(), HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getLocalizedMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 }

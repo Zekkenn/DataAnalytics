@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.apau.notasprototype.persistence.impl;
+package edu.eci.apau.notasprototype.persistence;
 
+import java.util.List;
 /**
  *
  * @author Esteban
  */
-public class InMemoryMateriaPersistence {
+public interface MateriasRepository{
     
+    public List<String> loadAllMaterias();
 }

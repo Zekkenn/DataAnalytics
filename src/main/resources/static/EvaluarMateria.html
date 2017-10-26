@@ -4,13 +4,51 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheets/mycss.css"/>
+        <script src="js/game/evaluarMateria.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h:form id="general">
+            <div class="header">
+                <ul class="optionsHeader">
+                    <li>
+                        <img src="/images/logo.jpg" alt="Escuela Colombiana de Ingenieria Julio Garavito"/>
+                        <div class="barMenu">
+                            <div class="dropdown">
+                                <button onclick="location.href = 'index.html'" class="menuBarButton">Inicio</button>
+                            </div>
+                            <div class="dropdown">
+                                <button class="menuBarButton">Utilidades</button>
+                                <div class="dropdown-content">
+                                    <a href="EvaluarMateria.html" target="_self">Evaluar Materia</a>
+                                    <a href="ReporteMaterias.html" target="_self">Reporte de Materias</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </h:form>
+        <div class="content" onload="evaluarMateria.loadMaterias()">
+            <h:form id="reporteMaterias" onload="evaluarMateria.loadMaterias()" style="text-align: center;">
+                
+                <h1>Evaluar Materia</h1>
+                
+                <form action="">
+                    <input list="materias" name="materia">
+                    <datalist id="materias">
+                    </datalist>
+                        <input type="submit">
+                </form>
+            </h:form>
+        </div>
     </body>
 </html>

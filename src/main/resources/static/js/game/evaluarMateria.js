@@ -8,8 +8,9 @@ var evaluarMateria = (function () {
                     function (data) {
                         console.log("LookingFor Asignatures");
                         console.log("Adding Asignatures");
-                        for (var i = 0, len = res.length; i < len; i++) {
-                            $('#materias').append("<option value='" + data.get(i) + "'>");
+                        console.log(data);
+                        for (var i = 0, len = data.length; i < len; i++) {
+                            $('#materias').append("<option value='" + data[i] + "'>");
                         }
                     }
             ).fail(

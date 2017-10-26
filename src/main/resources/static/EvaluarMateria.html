@@ -18,7 +18,7 @@ and open the template in the editor.
         <script src="/webjars/stomp-websocket/stomp.min.js"></script>
         <script src="js/game/evaluarMateria.js"></script>
     </head>
-    <body>
+    <body onload="evaluarMateria.loadMaterias()">
         <h:form id="general">
             <div class="header">
                 <ul class="optionsHeader">
@@ -40,8 +40,8 @@ and open the template in the editor.
                 </ul>
             </div>
         </h:form>
-        <div class="content" onload="evaluarMateria.loadMaterias()">
-            <h:form id="reporteMaterias" onload="evaluarMateria.loadMaterias()" style="text-align: center;">
+        <div class="content">
+            <h:form id="reporteMaterias" style="text-align: center;">
                 
                 <h1>Evaluar Materia</h1>
                 

@@ -12,6 +12,10 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
         <link rel="stylesheet" href="stylesheets/mycss.css"/>
     </head>
     <body>
@@ -23,10 +27,12 @@ and open the template in the editor.
                 </li>
             </ul>
             <div class="menu" style="width: 95%">
-                <button onclick="location.href='EvaluarMateria.html'" style="background-image: url('../images/evaluar_materia.png')"/>
+                <button onclick="location.href='/admin/admin.html'" 
+                        style="background-image: url('../images/admin-icon.png'); background-color:transparent"/>
             </div>
-            <div class="menu" style="width: 95%;">
-                <button onclick="location.href='ReporteMaterias.html'" style="background-image: url('../images/reporte_materias.png')"/>
+            <div class="menu" >
+                <button onclick="location.href='/students/student.html'" 
+                        style="background-image: url('../images/user-icon.png'); background-color:transparent"/>
             </div>
             
         </div>

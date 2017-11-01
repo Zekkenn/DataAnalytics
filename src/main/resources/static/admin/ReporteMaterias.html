@@ -14,11 +14,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
           href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />    
-        <link rel="stylesheet" href="stylesheets/mycss.css"/>
+        <link rel="stylesheet" href="../stylesheets/mycss.css"/>
         <script src="/webjars/jquery/jquery.min.js"></script>
         <script src="/webjars/sockjs-client/sockjs.min.js"></script>
         <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-        <script src="js/game/evaluarMateria.js"></script>
+        <script src="../js/game/evaluarMateria.js"></script>
     </head>
     <body onload="evaluarMateria.loadMaterias()">
         <h:form id="general">
@@ -28,12 +28,12 @@ and open the template in the editor.
                         <img src="/images/logo.jpg" alt="Escuela Colombiana de Ingenieria Julio Garavito"/>
                         <div class="barMenu">
                             <div class="dropdown">
-                                <button onclick="location.href = 'index.html'" class="menuBarButton">Inicio</button>
+                                <button onclick="location.href = '../index.html'" class="menuBarButton">Inicio</button>
                             </div>
                             <div class="dropdown">
                                 <button class="menuBarButton">Utilidades</button>
                                 <div class="dropdown-content">
-                                    <a href="EvaluarMateria.html" target="_self">Evaluar Materia</a>
+                                    <a href="../students/EvaluarMateria.html" target="_self">Evaluar Materia</a>
                                     <a href="ReporteMaterias.html" target="_self">Reporte de Materias</a>
                                 </div>
                             </div>

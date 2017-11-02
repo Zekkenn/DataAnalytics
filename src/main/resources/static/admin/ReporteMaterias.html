@@ -31,10 +31,10 @@ and open the template in the editor.
                                 <button onclick="location.href = '/index.html'" class="menuBarButton">Inicio</button>
                             </div>
                             <div class="dropdown">
-                                <button class="menuBarButton">Utilidades</button>
+                                <button class="menuBarButton">Herramientas</button>
                                 <div class="dropdown-content">
-                                    <a href="/students/EvaluarMateria.html" target="_self">Evaluar Materia</a>
-                                    <a href="ReporteMaterias.html" target="_self">Reporte de Materias</a>
+                                    <a href="/admin/admin.html" target="_self">Entrar a Menú Administrador</a>
+                                    <a href="/students/student.html" target="_self">Entrar a Menú Estudiantes</a>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ and open the template in the editor.
                     <input list="materias" id="materia" name="materia">
                         <datalist id="materias">
                         </datalist>
-                        <button type="button" class="btn btn-primary" onclick="evaluarMateria.addPlot()">Consultar Reportes</button>
+                        <button type="button" class="btn btn-primary" onclick="evaluarMateria.addPlotBySubjects()">Consultar Reportes</button>
                         
                     <br> <br> 
                     <div id = "plot1">

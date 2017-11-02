@@ -59,10 +59,9 @@ var evaluarMateria = (function () {
                     +    'height="500"'
                     +    'frameborder="5"'
                     +    'scrolling="no"'
-                    +    'src="html/plotPimb3dTercios.html">'
+                    +    'src="/html/' + src + '">'
                     +'</iframe>'
                     );
-
         }
 
     };

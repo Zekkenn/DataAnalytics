@@ -86,7 +86,7 @@ var evaluarMateria = (function () {
                 plot('#plot1', "3dPlotPimb.html");
                 plot('#plot1', "plotPimb3dTercios.html");
             } else if ($("#materia").val() === "MBDA"){
-                plot('#plot1', "3dPlotMbda.html");
+                plot('#plot1', "3dplotMbda.html");
                 plot('#plot2', "finalVspromMbda.html");
             }
         },

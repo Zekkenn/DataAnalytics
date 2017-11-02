@@ -1,9 +1,26 @@
 var evaluarMateria = (function () {
     
     var updateResults = function (result) {
-        document.getElementById("tercio3").innerHTML = "Tercio 3 Estimado: "+result.nota3;
-        document.getElementById("rSquared").innerHTML = "Multiple R-squared : "+result.rSquared;
-        document.getElementById("decision").innerHTML = result.decision;
+        result.nota3 = Math.round(Math.abs(result.nota3) * 100) / 100;
+        result.rSquared = Math.round(result.rSquared * 10000) / 100;
+        var tittle = "";
+        var image = "";
+        var content = "Según el proceso de análisis, la nota que sacarías en el ultimo tercio rondaria entre el valor de " +
+                    result.nota3 + ", con una confiabilidad en la estimación del " + result.rSquared + "%";;
+        var decision = "";
+        if(result.decision === 'Cancele'){
+            tittle = "JUMM.. ESTA COMPLICADO";
+            image = "../images/mal.png";
+            decision = "Lo mejor que puedes hacer es Cancelar";
+        }else{
+            tittle = "LO ESTAS HACIENDO BIEN";
+            image = "../images/bien.png";
+            decision = "No te descuides";
+        }
+        document.getElementById("status").src = image;
+        document.getElementById("tercio3").innerHTML = tittle;
+        document.getElementById("rSquared").innerHTML = content;
+        document.getElementById("decision").innerHTML = decision;
     };
     
     return {

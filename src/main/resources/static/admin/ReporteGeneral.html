@@ -45,23 +45,24 @@ and open the template in the editor.
         <div class="content">
             <h:form id="reporteMaterias" style="text-align: center;">
                 
-                <h1 style="font-size: 45px; text-align: center">Reporte General de Anomalías</h1>
+                <h1 style="font-size: 45px; text-align: center">Reporte General</h1>
                 
                 <form action="">
-                    <font>DEPARTAMENTO/DECANATURA: </font>
-                    <input list="departments" id="department" name="department">
-                        <datalist id="departments">
-                            <option value="Sistemas">
-                            <option value="Matematicas">
-                            <option value="Industrial">
-                            <option value="Humanidades">
-                            <option value="Electronica">
-                            <option value="Electrica">
-                        </datalist>
-                        <button type="button" class="btn btn-primary" onclick="evaluarMateria.addPlotByAnomalies()">Consultar Reportes</button>
-                        
-                    <br> <br> 
+                    
                     <div id = "plot1">
+                        <h1 style="font-size: 25px; text-align: center">Análisis de Comportamiento</h1>
+                        <img src="/html/img/cancelVsSems.png" alt="Cancelaciones vs Semestres"/>
+                    </div>
+                    <div id = "plot2">
+                        <img src="/html/img/notasVsSems.png" alt="Notas vs Semestres"/>
+                    </div>
+                    <div id = "plot2">
+                        <h1 style="font-size: 25px; text-align: center">Análisis de Correlación</h1>
+                        <img src="/html/img/corrGen.png" alt="Notas vs Semestres"/>
+                    </div>
+                    <div id = "plot3">
+                        <iframe id="Plot1" style="text-align: center;" name="Pimb" title="Plot" width="800" height="500" 
+                                frameborder="5" scrolling="no" src="/html/General.html"></iframe>
                     </div>
                 </form>
                
@@ -73,4 +74,5 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+
 

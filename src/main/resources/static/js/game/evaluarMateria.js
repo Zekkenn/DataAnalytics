@@ -38,6 +38,12 @@ var evaluarMateria = (function () {
         );
     };
     
+    var plotImg = function (id, src, tittle){
+        $(id).html(
+            '<img src="/html/img/' + src +  '" width="85%" alt="' + tittle +  '"/>'
+        );
+    };
+    
     return {
 
         loadMaterias : function () {
@@ -76,35 +82,33 @@ var evaluarMateria = (function () {
             });
         },
         addPlotBySubjects : function (){
-            var src = '';
             if ($("#materia").val() === "PIMB") {
-                src = "plotPimb3dTercios.html";
-                plot('#plot1', src);
+                plot('#plot1', "3dPlotPimb.html");
+                plot('#plot1', "plotPimb3dTercios.html");
             } else if ($("#materia").val() === "MBDA"){
-                src = "finalVspromMbda.html";
-                plot('#plot1', src);
+                plot('#plot1', "3dPlotMbda.html");
+                plot('#plot2', "finalVspromMbda.html");
             }
         },
         addPlotByAnomalies : function (){
-            var src = '';
             if ($("#department").val() === "Sistemas") {
-                src = "Anom_notasVsSemsSistemas.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsSistemas.png");
+                plot('#plot2', "Anom_notasVsSemsSistemas.html");
             } else if ($("#department").val() === "Matematicas"){
-                src = "Anom_notasVsSemsMatematicas.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsMatematicas.png");
+                plot('#plot2', "Anom_notasVsSemsMatematicas.html");
             } else if ($("#department").val() === "Humanidades"){
-                src = "Anom_notasVsSemsHumanidades.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsHumanidades.png");
+                plot('#plot2', "Anom_notasVsSemsHumanidades.html");
             } else if ($("#department").val() === "Industrial"){
-                src = "Anom_notasVsSemsIndustrial.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsIndustrial.png");
+                plot('#plot2', "Anom_notasVsSemsIndustrial.html");
             } else if ($("#department").val() === "Electronica"){
-                src = "Anom_notasVsSemsElectronica.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsElectronica.png");
+                plot('#plot2', "Anom_notasVsSemsElectronica.html");
             } else if ($("#department").val() === "Electrica"){
-                src = "Anom_notasVsSemsElectrica.html";
-                plot('#plot1', src);
+                plotImg('#plot1', "cancelVsSemsElectrica.png");
+                plot('#plot2', "Anom_notasVsSemsElectrica.html");
             }
         }
 
